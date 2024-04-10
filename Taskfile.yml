@@ -1,0 +1,5 @@
+version: "3"
+
+tasks:
+  test: cargo test --lib {{.CLI_ARGS}}
+  time: cargo +nightly test --lib {{.CLI_ARGS}} -- -Z unstable-options --report-time
