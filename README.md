@@ -13,7 +13,7 @@ cargo test <problem_number>
 Or if you have task installed:
 
 ```bash
-task test <problem_number>
+task test -- <problem_number>
 # or time it
-task time <problem_number>
+task time -- <problem_number>
 ```
