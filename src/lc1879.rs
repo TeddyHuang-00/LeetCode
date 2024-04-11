@@ -10,7 +10,7 @@ impl Solution {
     fn dp(
         nums1: &Vec<i32>,
         nums2: &Vec<i32>,
-        mask: &Vec<usize>,
+        mask: &[usize],
         cache: &mut std::collections::HashMap<usize, i32>,
     ) -> i32 {
         if mask.is_empty() {
@@ -22,8 +22,7 @@ impl Solution {
         }
         let mut res = std::i32::MAX;
         for (idx, m) in mask.iter().enumerate() {
-            let mut new_mask = mask.clone();
-            new_mask.remove(idx);
+            let new_mask = [&mask[..idx], &mask[idx + 1..]].concat();
             res = res.min(
                 (nums1[*m] ^ nums2[new_mask.len()]) + Solution::dp(nums1, nums2, &new_mask, cache),
             );

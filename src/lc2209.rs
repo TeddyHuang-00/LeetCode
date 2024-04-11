@@ -18,9 +18,9 @@ impl Solution {
             .collect::<Vec<_>>();
         for _ in 0..num_carpets {
             let mut new_dp = dp.clone();
-            for i in 1..carpet_len {
+            (1..carpet_len).for_each(|i| {
                 new_dp[i] = 0;
-            }
+            });
             for i in carpet_len..=floor.len() {
                 // If we put a carpet here, the white tiles will be covered
                 // Otherwise, the same amount of white tiles as the previous state + the current tile

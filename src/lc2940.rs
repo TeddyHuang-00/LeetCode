@@ -14,7 +14,7 @@ impl Solution {
             }
             desc_stack.push(i);
         }
-        let result = queries
+        queries
             .into_iter()
             .map(|e| {
                 let (alice, bob) = (e[0] as usize, e[1] as usize);
@@ -36,8 +36,7 @@ impl Solution {
                 }
                 -1
             })
-            .collect::<Vec<_>>();
-        result
+            .collect::<Vec<_>>()
     }
 }
 

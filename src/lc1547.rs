@@ -8,9 +8,9 @@ impl Solution {
         cuts.push(n);
         let n = cuts.len();
         let mut dp = vec![vec![std::i32::MAX; n]; n];
-        for i in 0..cuts.len() - 1 {
+        (0..cuts.len() - 1).for_each(|i| {
             dp[i][i + 1] = 0;
-        }
+        });
         for num_segs in 2..n {
             for (i, j) in (0..n).zip(num_segs..n) {
                 let step_cost = cuts[j] - cuts[i];

@@ -4,7 +4,7 @@ tasks:
   list:
     vars:
       SOLS:
-        sh: find src/ -type f -name 'lc*.rs' | grep -Po '\d+'
+        sh: find src/ -type f -name 'lc*.rs' | grep -Po '\d+' | sort
     silent: true
     cmds:
       - echo "Solutions:"
@@ -14,19 +14,19 @@ tasks:
   time-all: cargo +nightly test --lib -- -Z unstable-options --report-time
   test-*:
     vars:
-      ID: '{{ index .MATCH 0 }}'
-    cmds: 
+      ID: "{{ index .MATCH 0 }}"
+    cmds:
       - cargo test --lib {{.ID}}
-  time-*: 
+  time-*:
     vars:
-      ID: '{{ index .MATCH 0 }}'
-    cmds: 
+      ID: "{{ index .MATCH 0 }}"
+    cmds:
       - cargo +nightly test --lib {{.ID}} -- -Z unstable-options --report-time
   watch-*:
     watch: true
     sources:
-      - 'src/lc{{.ID}}.rs'
+      - "src/lc{{.ID}}.rs"
     vars:
-      ID: '{{ index .MATCH 0 }}'
-    cmds: 
+      ID: "{{ index .MATCH 0 }}"
+    cmds:
       - cargo +nightly test --lib {{.ID}} -- -Z unstable-options --report-time

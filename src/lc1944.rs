@@ -13,7 +13,7 @@ impl Solution {
                 // See everyone in between that are not blocked
                 result[i] += 1;
             }
-            if desc_stack.len() > 0 {
+            if !desc_stack.is_empty() {
                 // See the taller person
                 result[i] += 1;
             }
