@@ -8,8 +8,8 @@ impl Solution {
     }
 
     fn dp(
-        nums1: &Vec<i32>,
-        nums2: &Vec<i32>,
+        nums1: &[i32],
+        nums2: &[i32],
         mask: &[usize],
         cache: &mut std::collections::HashMap<usize, i32>,
     ) -> i32 {
