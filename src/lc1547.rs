@@ -7,7 +7,7 @@ impl Solution {
         cuts.insert(0, 0);
         cuts.push(n);
         let n = cuts.len();
-        let mut dp = vec![vec![std::i32::MAX; n]; n];
+        let mut dp = vec![vec![i32::MAX; n]; n];
         (0..cuts.len() - 1).for_each(|i| {
             dp[i][i + 1] = 0;
         });

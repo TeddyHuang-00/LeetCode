@@ -20,7 +20,7 @@ impl Solution {
         if let Some(&v) = cache.get(&h) {
             return v;
         }
-        let mut res = std::i32::MAX;
+        let mut res = i32::MAX;
         for (idx, m) in mask.iter().enumerate() {
             let new_mask = [&mask[..idx], &mask[idx + 1..]].concat();
             res = res.min(
