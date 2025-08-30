@@ -9,4 +9,4 @@ edition = "2024"
 
 [lib]
 name = "leetcode"
-path = "src/problems.rs"
+path = "src/lib.rs"
